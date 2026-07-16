@@ -1,0 +1,51 @@
+# --- Laravel Core & Logs ---
+*.log
+/.phpunit.cache
+/.phpunit.result.cache
+/bootstrap/ssr
+/node_modules
+/vendor
+/public/build
+/public/fonts-manifest.dev.json
+/public/hot
+/public/storage
+
+# --- Database & Environment ---
+.env
+.env.backup
+.env.production
+/database/database.sqlite
+/database/database.sqlite-journal
+
+# --- Storage Keys & Pail ---
+/storage/*.key
+/storage/pail
+
+# --- Dynamic Build Assets (Verify if auto-generated!) ---
+/resources/js/actions
+/resources/js/routes
+/resources/js/wayfinder
+
+# --- System & OS ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs, Editors & AI Helpers ---
+/.cursor/
+/.codex/
+/.idea
+/.vscode
+/.zed
+/.nova
+/.fleet
+.phpactor.json
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+
+# --- Legacy & Package Managers ---
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/auth.json
