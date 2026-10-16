@@ -15,7 +15,8 @@ class ListProjectsAction
      */
     public function execute(ProjectFilterData $dto): Collection
     {
-        $query = Project::query();
+        $query = Project::query()
+            ->with('client');
 
         return $query->get();
     }
