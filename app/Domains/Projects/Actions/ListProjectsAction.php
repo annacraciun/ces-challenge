@@ -15,7 +15,12 @@ class ListProjectsAction
      */
     public function execute(ProjectFilterData $dto): Collection
     {
-        $query = Project::query();
+        $query = Project::query()
+            ->with('client');
+
+        if ($dto->status !== null) {
+            $query->where('status', $dto->status->value);
+        }
 
         return $query->get();
     }

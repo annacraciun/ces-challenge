@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react';
+import { Head, router } from '@inertiajs/react';
 
 interface Client {
     id: number;
@@ -24,6 +24,15 @@ interface IndexProps {
 export default function Index({ projects, currentStatus }: IndexProps) {
     const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const status = e.target.value;
+
+        router.get(
+            '/projects',
+            status ? { status } : {},
+            {
+                preserveState: true,
+                replace: true,
+            }
+        );
     };
 
     return (
