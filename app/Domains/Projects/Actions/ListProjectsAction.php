@@ -18,6 +18,10 @@ class ListProjectsAction
         $query = Project::query()
             ->with('client');
 
+        if ($dto->status !== null) {
+            $query->where('status', $dto->status->value);
+        }
+
         return $query->get();
     }
 }
